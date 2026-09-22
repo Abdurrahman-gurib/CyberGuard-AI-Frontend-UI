@@ -1,4 +1,4 @@
-# CyberGuard AI — Frontend UI
+# CyberGuard AI - Frontend UI
 
 **AI-assisted cybersecurity risk analysis, recommendation and alert platform for enterprises.**
 
@@ -19,7 +19,7 @@ Backend repository: **CyberGuard-AI-Backend-API** (NestJS + PostgreSQL).
 | Build tool | Vite 5 |
 | Routing | react-router-dom v6 |
 | HTTP | Native `fetch` with a typed API client (`src/api.ts`) |
-| Styling | Hand-written CSS design system (`src/styles.css`) — no UI library |
+| Styling | Hand-written CSS design system (`src/styles.css`) - no UI library |
 | Auth | JWT stored client-side, attached as `Authorization: Bearer` |
 | Hosting | Render static site |
 
@@ -132,7 +132,7 @@ npm run preview
 2. Build command: `npm install && npm run build`
 3. Publish directory: `dist`
 4. Environment variable: `VITE_API_URL=https://<your-backend>.onrender.com/api`
-5. Add a rewrite rule so client-side routing works: `/*` → `/index.html` (action: *Rewrite*).
+5. Add a rewrite rule so client-side routing works: source `/*`, destination `/index.html` (action: *Rewrite*).
 
 A ready-made blueprint is included in [`render.yaml`](render.yaml).
 

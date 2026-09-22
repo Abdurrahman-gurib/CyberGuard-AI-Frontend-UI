@@ -119,7 +119,7 @@ export default function AiAnalysisTab({
     }
   };
 
-  if (loading) return <Loading label="Loading AI runs…" />;
+  if (loading) return <Loading label="Loading AI runs..." />;
   if (error) return <ErrorNotice message={error} onRetry={() => void load()} />;
 
   const latestDraft = runs.find((r) => r.provider === "openai");
@@ -140,7 +140,7 @@ export default function AiAnalysisTab({
           <h3>AI analysis pipeline</h3>
           <div className="btn-row">
             <button className="btn btn-primary" onClick={() => void runAnalysis()} disabled={analyzing}>
-              {analyzing ? "Running analysis…" : "Run OpenAI analysis"}
+              {analyzing ? "Running analysis..." : "Run OpenAI analysis"}
             </button>
             {latestDraft && latestDraft.status === "succeeded" && (
               <button
@@ -148,7 +148,7 @@ export default function AiAnalysisTab({
                 onClick={() => void requestReview(latestDraft.id)}
                 disabled={reviewing}
               >
-                {reviewing ? "Requesting review…" : "Request Claude review"}
+                {reviewing ? "Requesting review..." : "Request Claude review"}
               </button>
             )}
           </div>
@@ -216,7 +216,7 @@ export default function AiAnalysisTab({
                         )}
                       </td>
                       <td className="cell-mono">
-                        {c.evidence_ids.length > 0 ? c.evidence_ids.join(", ") : "—"}
+                        {c.evidence_ids.length > 0 ? c.evidence_ids.join(", ") : "-"}
                       </td>
                       <td>
                         {c.review_required ? (
@@ -262,7 +262,7 @@ export default function AiAnalysisTab({
                           {added
                             ? "Added"
                             : addingRisk === s.title
-                              ? "Adding…"
+                              ? "Adding..."
                               : "Add as risk"}
                         </button>
                       </div>
@@ -322,7 +322,7 @@ export default function AiAnalysisTab({
                       </span>
                     </td>
                     <td>{c.issue_category}</td>
-                    <td>{c.suggested_revision || "—"}</td>
+                    <td>{c.suggested_revision || "-"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -373,7 +373,7 @@ export default function AiAnalysisTab({
                     <StatusBadge status={r.status} />
                   </td>
                   <td>{new Date(r.createdAt).toLocaleString()}</td>
-                  <td className="cell-preview">{r.error || "—"}</td>
+                  <td className="cell-preview">{r.error || "-"}</td>
                 </tr>
               ))}
             </tbody>

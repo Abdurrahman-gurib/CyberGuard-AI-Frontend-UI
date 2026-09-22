@@ -81,7 +81,7 @@ export default function Assessments() {
       </div>
 
       {loading ? (
-        <Loading label="Loading assessments…" />
+        <Loading label="Loading assessments..." />
       ) : error ? (
         <ErrorNotice message={error} onRetry={() => void load()} />
       ) : assessments.length === 0 ? (
@@ -157,7 +157,7 @@ export default function Assessments() {
               Cancel
             </button>
             <button className="btn btn-primary" type="submit" disabled={busy}>
-              {busy ? "Creating…" : "Create"}
+              {busy ? "Creating..." : "Create"}
             </button>
           </div>
         </form>

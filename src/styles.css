@@ -1,4 +1,4 @@
-/* ---------- CyberGuard AI — global styles ---------- */
+/* ---------- CyberGuard AI - global styles ---------- */
 
 :root {
   --navy: #16324a;
@@ -82,7 +82,7 @@ a:hover {
 .sidebar {
   width: 230px;
   flex-shrink: 0;
-  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+  background: var(--navy);
   color: #e8eef4;
   display: flex;
   flex-direction: column;
@@ -1065,7 +1065,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, #244a6b 100%);
+  background: var(--navy);
   padding: 20px;
 }
 

@@ -9,7 +9,7 @@ import StatusBadge from "./StatusBadge";
 function scaleOptions(labels: Record<number, string>) {
   return [1, 2, 3, 4, 5].map((n) => (
     <option key={n} value={n}>
-      {n} — {labels[n]}
+      {n} - {labels[n]}
     </option>
   ));
 }
@@ -110,7 +110,7 @@ function AddVersionForm({
       )}
       <div>
         <button className="btn btn-primary btn-sm" type="submit" disabled={busy}>
-          {busy ? "Saving…" : "Add version"}
+          {busy ? "Saving..." : "Add version"}
         </button>
       </div>
     </form>
@@ -171,10 +171,10 @@ function RecommendationForm({
         <label className="field">
           <span>Control *</span>
           <select value={controlId} onChange={(e) => setControlId(e.target.value)}>
-            <option value="">Select a control…</option>
+            <option value="">Select a control...</option>
             {controls.map((c) => (
               <option key={c.id} value={c.id}>
-                {c.controlCode} — {c.description.length > 70 ? `${c.description.slice(0, 70)}…` : c.description}
+                {c.controlCode} - {c.description.length > 70 ? `${c.description.slice(0, 70)}...` : c.description}
               </option>
             ))}
           </select>
@@ -207,7 +207,7 @@ function RecommendationForm({
       )}
       <div className="btn-row">
         <button className="btn btn-secondary btn-sm" type="submit" disabled={busy}>
-          {busy ? "Saving…" : "Add recommendation"}
+          {busy ? "Saving..." : "Add recommendation"}
         </button>
         {saved && <span className="muted-inline">Recommendation saved.</span>}
       </div>
@@ -316,7 +316,7 @@ export default function RisksTab({
     }
   };
 
-  if (loading) return <Loading label="Loading risks…" />;
+  if (loading) return <Loading label="Loading risks..." />;
   if (error) return <ErrorNotice message={error} onRetry={() => void loadAll()} />;
 
   return (
@@ -362,7 +362,7 @@ export default function RisksTab({
           )}
           <div>
             <button className="btn btn-primary" type="submit" disabled={creating}>
-              {creating ? "Creating…" : "Create risk"}
+              {creating ? "Creating..." : "Create risk"}
             </button>
           </div>
         </form>
@@ -387,7 +387,7 @@ export default function RisksTab({
 
               <h4 className="subhead">Version history</h4>
               {versions.length === 0 ? (
-                <p className="muted">No scored versions yet — add one below.</p>
+                <p className="muted">No scored versions yet - add one below.</p>
               ) : (
                 <table className="data-table">
                   <thead>
@@ -416,7 +416,7 @@ export default function RisksTab({
                         <td>{v.basis}</td>
                         <td className="cell-preview" title={v.rationale}>
                           {v.rationale.length > 60
-                            ? `${v.rationale.slice(0, 60)}…`
+                            ? `${v.rationale.slice(0, 60)}...`
                             : v.rationale}
                           {v.consequenceReview && (
                             <div className="consequence-flag">
@@ -434,7 +434,7 @@ export default function RisksTab({
                               disabled={approveBusy === v.id}
                               onClick={() => void approve(v.id)}
                             >
-                              {approveBusy === v.id ? "Approving…" : "Approve"}
+                              {approveBusy === v.id ? "Approving..." : "Approve"}
                             </button>
                           ) : (
                             <button

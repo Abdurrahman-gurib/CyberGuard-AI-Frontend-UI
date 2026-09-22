@@ -10,9 +10,9 @@ import StatusBadge from "../components/StatusBadge";
 import type { Alert, DashboardData } from "../types";
 
 function fmtDate(value: string | null | undefined): string {
-  if (!value) return "—";
+  if (!value) return "-";
   const d = new Date(value);
-  return Number.isNaN(d.getTime()) ? "—" : d.toLocaleDateString();
+  return Number.isNaN(d.getTime()) ? "-" : d.toLocaleDateString();
 }
 
 export default function Dashboard() {
@@ -48,8 +48,8 @@ export default function Dashboard() {
       const created = await api.post<Alert[]>(`/organisations/${orgId}/alerts/evaluate`);
       setEvalMessage(
         created.length === 0
-          ? "Evaluation complete — no new alerts."
-          : `Evaluation complete — ${created.length} new alert${created.length === 1 ? "" : "s"} raised.`
+          ? "Evaluation complete - no new alerts."
+          : `Evaluation complete - ${created.length} new alert${created.length === 1 ? "" : "s"} raised.`
       );
       await load();
     } catch (e) {
@@ -60,7 +60,7 @@ export default function Dashboard() {
   };
 
   if (!orgId) return null;
-  if (loading) return <Loading label="Loading dashboard…" />;
+  if (loading) return <Loading label="Loading dashboard..." />;
   if (error) return <ErrorNotice message={error} onRetry={() => void load()} />;
   if (!data) return null;
 
@@ -75,7 +75,7 @@ export default function Dashboard() {
         </div>
         <div className="page-actions">
           <button className="btn btn-primary" onClick={() => void evaluateAlerts()} disabled={evaluating}>
-            {evaluating ? "Evaluating…" : "Evaluate alerts"}
+            {evaluating ? "Evaluating..." : "Evaluate alerts"}
           </button>
         </div>
       </div>
@@ -133,7 +133,7 @@ export default function Dashboard() {
             </ul>
           )}
           <Link to="/actions" className="panel-link">
-            View all actions →
+            View all actions
           </Link>
         </section>
 
@@ -150,7 +150,7 @@ export default function Dashboard() {
                   <div className="list-main">
                     <span className="list-title">{alert.message}</span>
                     <span className="list-meta">
-                      {alert.source} · {fmtDate(alert.createdAt)}
+                      {alert.source} | {fmtDate(alert.createdAt)}
                     </span>
                   </div>
                   <div className="list-badges">
@@ -162,7 +162,7 @@ export default function Dashboard() {
             </ul>
           )}
           <Link to="/alerts" className="panel-link">
-            View all alerts →
+            View all alerts
           </Link>
         </section>
       </div>

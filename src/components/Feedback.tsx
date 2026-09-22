@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export function Loading({ label = "Loading…" }: { label?: string }) {
+export function Loading({ label = "Loading..." }: { label?: string }) {
   return (
     <div className="feedback loading">
       <span className="spinner" aria-hidden="true" />

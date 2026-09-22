@@ -47,7 +47,7 @@ export default function AssessmentDetail() {
   }, [load]);
 
   if (!id) return <ErrorNotice message="No assessment id provided." />;
-  if (loading) return <Loading label="Loading assessment…" />;
+  if (loading) return <Loading label="Loading assessment..." />;
   if (error) return <ErrorNotice message={error} onRetry={() => void load()} />;
   if (!assessment) return null;
 
@@ -61,7 +61,7 @@ export default function AssessmentDetail() {
           </div>
           <h2>{assessment.title}</h2>
           <p className="page-sub">
-            Horizon: {assessment.horizonMonths} months · Created{" "}
+            Horizon: {assessment.horizonMonths} months | Created{" "}
             {new Date(assessment.createdAt).toLocaleDateString()}
           </p>
         </div>

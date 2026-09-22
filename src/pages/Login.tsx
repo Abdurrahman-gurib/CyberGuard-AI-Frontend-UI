@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+﻿import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, setStoredUser, setToken } from "../api";
 import type { AuthResponse } from "../types";
@@ -48,7 +48,7 @@ export default function Login() {
       <div className="login-card card">
         <div className="login-brand">
           <span className="brand-shield" aria-hidden="true">
-            {"\u{1F6E1}️"}
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"><path d="M12 2.5 4.5 5.4v6.1c0 4.6 3.2 8 7.5 9.9 4.3-1.9 7.5-5.3 7.5-9.9V5.4L12 2.5Z"/><path d="m8.7 12 2.3 2.3 4.3-4.5" strokeLinecap="round"/></svg>
           </span>
           <h1>CyberGuard AI</h1>
           <p className="login-sub">AI-assisted cybersecurity risk analysis</p>
@@ -117,7 +117,7 @@ export default function Login() {
 
           <button className="btn btn-primary btn-block" type="submit" disabled={busy}>
             {busy
-              ? "Please wait…"
+              ? "Please wait..."
               : mode === "login"
                 ? "Sign in"
                 : "Create account"}

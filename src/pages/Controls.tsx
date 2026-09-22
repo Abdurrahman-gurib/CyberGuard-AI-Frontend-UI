@@ -47,7 +47,7 @@ export default function Controls() {
           <input
             type="search"
             className="search-input"
-            placeholder="Filter controls…"
+            placeholder="Filter controls..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             aria-label="Filter controls"
@@ -56,7 +56,7 @@ export default function Controls() {
       </div>
 
       {loading ? (
-        <Loading label="Loading controls…" />
+        <Loading label="Loading controls..." />
       ) : error ? (
         <ErrorNotice message={error} onRetry={() => void load()} />
       ) : controls.length === 0 ? (

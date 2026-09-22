@@ -158,7 +158,7 @@ export default function Actions() {
       </div>
 
       {loading ? (
-        <Loading label="Loading actions…" />
+        <Loading label="Loading actions..." />
       ) : error ? (
         <ErrorNotice message={error} onRetry={() => void load()} />
       ) : actions.length === 0 ? (
@@ -187,9 +187,9 @@ export default function Actions() {
                 return (
                   <tr key={a.id}>
                     <td className="cell-strong">{a.title}</td>
-                    <td>{a.ownerEmail || "—"}</td>
+                    <td>{a.ownerEmail || "-"}</td>
                     <td className={overdue ? "cell-overdue" : undefined}>
-                      {a.dueAt ? new Date(a.dueAt).toLocaleDateString() : "—"}
+                      {a.dueAt ? new Date(a.dueAt).toLocaleDateString() : "-"}
                       {overdue && <span className="overdue-tag">Overdue</span>}
                     </td>
                     <td>
@@ -280,7 +280,7 @@ export default function Actions() {
                       onChange={() => toggleRec(r.id)}
                     />
                     <span>
-                      {r.control.controlCode} — {r.riskTitle}{" "}
+                      {r.control.controlCode} - {r.riskTitle}{" "}
                       <span className="muted-inline">({r.priority.replace("_", " ")})</span>
                     </span>
                   </label>
@@ -298,7 +298,7 @@ export default function Actions() {
               Cancel
             </button>
             <button className="btn btn-primary" type="submit" disabled={creating}>
-              {creating ? "Creating…" : "Create action"}
+              {creating ? "Creating..." : "Create action"}
             </button>
           </div>
         </form>
@@ -330,7 +330,7 @@ export default function Actions() {
               Cancel
             </button>
             <button className="btn btn-primary" onClick={() => void submitForReview()} disabled={busy}>
-              {busy ? "Submitting…" : "Submit"}
+              {busy ? "Submitting..." : "Submit"}
             </button>
           </div>
         </div>
@@ -371,7 +371,7 @@ export default function Actions() {
               disabled={busy}
             >
               {busy
-                ? "Saving…"
+                ? "Saving..."
                 : decisionFor?.decision === "verified"
                   ? "Verify"
                   : "Return"}

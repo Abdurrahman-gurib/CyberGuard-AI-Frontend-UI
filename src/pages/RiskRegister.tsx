@@ -65,7 +65,7 @@ export default function RiskRegister() {
       </div>
 
       {loading ? (
-        <Loading label="Loading risk register…" />
+        <Loading label="Loading risk register..." />
       ) : error ? (
         <ErrorNotice message={error} onRetry={() => void load()} />
       ) : entries.length === 0 ? (
@@ -95,10 +95,10 @@ export default function RiskRegister() {
                 <tr key={e.riskId}>
                   <td className="cell-strong">{e.title}</td>
                   <td>{e.assessmentTitle}</td>
-                  <td>{e.latestVersion ? e.latestVersion.likelihood : "—"}</td>
-                  <td>{e.latestVersion ? e.latestVersion.impact : "—"}</td>
+                  <td>{e.latestVersion ? e.latestVersion.likelihood : "-"}</td>
+                  <td>{e.latestVersion ? e.latestVersion.impact : "-"}</td>
                   <td className="cell-strong">
-                    {e.latestVersion ? e.latestVersion.score : "—"}
+                    {e.latestVersion ? e.latestVersion.score : "-"}
                   </td>
                   <td>
                     {e.latestVersion ? (
@@ -111,7 +111,7 @@ export default function RiskRegister() {
                     {e.latestVersion ? (
                       <StatusBadge status={e.latestVersion.status} />
                     ) : (
-                      "—"
+                      "-"
                     )}
                   </td>
                 </tr>

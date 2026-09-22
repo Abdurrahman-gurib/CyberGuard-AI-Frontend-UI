@@ -40,8 +40,8 @@ export default function Alerts() {
       const created = await api.post<Alert[]>(`/organisations/${orgId}/alerts/evaluate`);
       setMessage(
         created.length === 0
-          ? "Evaluation complete — no new alerts."
-          : `Evaluation complete — ${created.length} new alert${created.length === 1 ? "" : "s"}.`
+          ? "Evaluation complete - no new alerts."
+          : `Evaluation complete - ${created.length} new alert${created.length === 1 ? "" : "s"}.`
       );
       await load();
     } catch (e) {
@@ -74,7 +74,7 @@ export default function Alerts() {
         </div>
         <div className="page-actions">
           <button className="btn btn-primary" onClick={() => void evaluate()} disabled={evaluating}>
-            {evaluating ? "Evaluating…" : "Evaluate alerts"}
+            {evaluating ? "Evaluating..." : "Evaluate alerts"}
           </button>
         </div>
       </div>
@@ -82,7 +82,7 @@ export default function Alerts() {
       {message && <div className="feedback info-notice">{message}</div>}
 
       {loading ? (
-        <Loading label="Loading alerts…" />
+        <Loading label="Loading alerts..." />
       ) : error ? (
         <ErrorNotice message={error} onRetry={() => void load()} />
       ) : alerts.length === 0 ? (
@@ -121,7 +121,7 @@ export default function Alerts() {
                         disabled={ackBusy === a.id}
                         onClick={() => void acknowledge(a.id)}
                       >
-                        {ackBusy === a.id ? "Acknowledging…" : "Acknowledge"}
+                        {ackBusy === a.id ? "Acknowledging..." : "Acknowledge"}
                       </button>
                     )}
                   </td>

@@ -65,7 +65,7 @@ export default function Organisations() {
                   <div className="list-main">
                     <span className="list-title">{o.name}</span>
                     <span className="list-meta">
-                      {o.sector} · {o.size}
+                      {o.sector} | {o.size}
                     </span>
                   </div>
                   {o.id === orgId ? (
@@ -122,7 +122,7 @@ export default function Organisations() {
               </div>
             )}
             <button className="btn btn-primary" type="submit" disabled={busy}>
-              {busy ? "Creating…" : "Create organisation"}
+              {busy ? "Creating..." : "Create organisation"}
             </button>
           </form>
         </section>

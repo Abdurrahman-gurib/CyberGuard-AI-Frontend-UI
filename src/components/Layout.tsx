@@ -1,4 +1,4 @@
-import {
+﻿import {
   createContext,
   useCallback,
   useContext,
@@ -114,7 +114,7 @@ export default function Layout() {
       <aside className="sidebar">
         <div className="sidebar-brand">
           <span className="brand-shield" aria-hidden="true">
-            {"\u{1F6E1}️"}
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"><path d="M12 2.5 4.5 5.4v6.1c0 4.6 3.2 8 7.5 9.9 4.3-1.9 7.5-5.3 7.5-9.9V5.4L12 2.5Z"/><path d="m8.7 12 2.3 2.3 4.3-4.5" strokeLinecap="round"/></svg>
           </span>
           <div>
             <div className="brand-name">CyberGuard AI</div>
@@ -169,7 +169,7 @@ export default function Layout() {
 
         <main className="content">
           {loading ? (
-            <Loading label="Loading workspace…" />
+            <Loading label="Loading workspace..." />
           ) : error ? (
             <ErrorNotice message={error} onRetry={() => void loadOrgs()} />
           ) : (

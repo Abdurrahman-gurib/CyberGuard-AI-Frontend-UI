@@ -5,11 +5,11 @@ import { useOrg } from "../components/Layout";
 import type { Asset } from "../types";
 
 const CRITICALITY_LABELS: Record<number, string> = {
-  1: "1 — Minimal",
-  2: "2 — Low",
-  3: "3 — Moderate",
-  4: "4 — High",
-  5: "5 — Mission critical",
+  1: "1 - Minimal",
+  2: "2 - Low",
+  3: "3 - Moderate",
+  4: "4 - High",
+  5: "5 - Mission critical",
 };
 
 export default function Assets() {
@@ -145,14 +145,14 @@ export default function Assets() {
           )}
           <div>
             <button className="btn btn-primary" type="submit" disabled={creating}>
-              {creating ? "Registering…" : "Register asset"}
+              {creating ? "Registering..." : "Register asset"}
             </button>
           </div>
         </form>
       </section>
 
       {loading ? (
-        <Loading label="Loading assets…" />
+        <Loading label="Loading assets..." />
       ) : error ? (
         <ErrorNotice message={error} onRetry={() => void load()} />
       ) : assets.length === 0 ? (
@@ -182,8 +182,8 @@ export default function Assets() {
                       {a.criticality} / 5
                     </span>
                   </td>
-                  <td>{a.product || "—"}</td>
-                  <td>{a.version || "—"}</td>
+                  <td>{a.product || "-"}</td>
+                  <td>{a.version || "-"}</td>
                   <td>{new Date(a.createdAt).toLocaleDateString()}</td>
                 </tr>
               ))}

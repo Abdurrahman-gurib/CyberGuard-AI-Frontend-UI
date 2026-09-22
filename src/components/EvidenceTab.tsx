@@ -90,7 +90,7 @@ export default function EvidenceTab({ assessmentId }: { assessmentId: string }) 
             }
           />
           <button className="btn btn-primary" onClick={() => void upload()} disabled={uploading}>
-            {uploading ? "Uploading…" : "Upload"}
+            {uploading ? "Uploading..." : "Upload"}
           </button>
         </div>
         {uploadError && (
@@ -101,7 +101,7 @@ export default function EvidenceTab({ assessmentId }: { assessmentId: string }) 
       </div>
 
       {loading ? (
-        <Loading label="Loading evidence…" />
+        <Loading label="Loading evidence..." />
       ) : error ? (
         <ErrorNotice message={error} onRetry={() => void load()} />
       ) : docs.length === 0 ? (
@@ -152,9 +152,9 @@ export default function EvidenceTab({ assessmentId }: { assessmentId: string }) 
                   <td className="cell-preview" title={d.textPreview ?? ""}>
                     {d.textPreview
                       ? d.textPreview.length > 80
-                        ? `${d.textPreview.slice(0, 80)}…`
+                        ? `${d.textPreview.slice(0, 80)}...`
                         : d.textPreview
-                      : "—"}
+                      : "-"}
                   </td>
                   <td>{new Date(d.uploadedAt).toLocaleDateString()}</td>
                 </tr>

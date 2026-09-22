@@ -44,7 +44,7 @@ export default function RiskMatrix({ cells }: { cells: MatrixCell[] }) {
                   <td
                     key={i}
                     className={`matrix-cell matrix-${band}${count > 0 ? " has-count" : ""}`}
-                    title={`Likelihood ${l} x Impact ${i} = ${l * i} (${band}) — ${count} risk${count === 1 ? "" : "s"}`}
+                    title={`Likelihood ${l} x Impact ${i} = ${l * i} (${band}) - ${count} risk${count === 1 ? "" : "s"}`}
                   >
                     {count > 0 ? count : ""}
                   </td>

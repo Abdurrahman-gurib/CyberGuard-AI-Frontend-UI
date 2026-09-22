@@ -107,7 +107,7 @@ export default function Reports() {
             onClick={() => void generate()}
             disabled={generating || !selectedId}
           >
-            {generating ? "Generating…" : "Generate report"}
+            {generating ? "Generating..." : "Generate report"}
           </button>
         </div>
       </div>
@@ -115,13 +115,13 @@ export default function Reports() {
       {error && <ErrorNotice message={error} onRetry={() => void loadReports()} />}
 
       {loadingAssessments ? (
-        <Loading label="Loading assessments…" />
+        <Loading label="Loading assessments..." />
       ) : assessments.length === 0 ? (
         <EmptyState title="No assessments available">
           Create an assessment before generating reports.
         </EmptyState>
       ) : loadingReports ? (
-        <Loading label="Loading reports…" />
+        <Loading label="Loading reports..." />
       ) : reports.length === 0 ? (
         <EmptyState title="No reports yet">
           Generate a report to snapshot the current risks and action statuses of this assessment.
@@ -142,7 +142,7 @@ export default function Reports() {
                       {r.snapshot?.generatedAt
                         ? new Date(r.snapshot.generatedAt).toLocaleString()
                         : new Date(r.createdAt).toLocaleString()}{" "}
-                      · Status: {r.status}
+                      | Status: {r.status}
                     </p>
                   </div>
                   <button

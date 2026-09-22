@@ -41,13 +41,13 @@ export default function Evidence() {
         <div>
           <h2>Evidence</h2>
           <p className="page-sub">
-            Evidence documents are managed per assessment — choose one to upload or review
+            Evidence documents are managed per assessment - choose one to upload or review
           </p>
         </div>
       </div>
 
       {loading ? (
-        <Loading label="Loading assessments…" />
+        <Loading label="Loading assessments..." />
       ) : error ? (
         <ErrorNotice message={error} onRetry={() => void load()} />
       ) : assessments.length === 0 ? (
